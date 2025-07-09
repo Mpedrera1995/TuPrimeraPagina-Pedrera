@@ -1,0 +1,1 @@
+La pagina web permite al usuario buscar/crear reseñas de videojuegos, como tambien agregar trucos y consolas nuevas que vallan saliendo. Orden exacto no tiene, ya que el usuario elegiria que esta buscando generar, ya sea busqueda o creacion, en la proxima entrega se podra hacer una busqueda de todos los agregados que se den a la web.
