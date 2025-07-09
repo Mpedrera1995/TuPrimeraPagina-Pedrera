@@ -15,8 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from AppCoder.views import inicio  # Asegurate de tener esta vista
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', inicio, name='inicio'),  # <- Esta línea arregla el 404
+    path('app/', include('AppCoder.urls')),
 ]

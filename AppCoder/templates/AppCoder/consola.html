@@ -1,0 +1,35 @@
+{% extends 'AppCoder/base.html' %}
+
+{% block content %}
+  <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="container" style="max-width: 500px;">
+      <h2 class="mb-4 text-center">Agregar una nueva consola</h2>
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3 text-center">
+          <label for="id_nombre" class="form-label d-block mx-auto" style="max-width: fit-content;">
+            Nombre de la consola:
+          </label>
+          {{ form.nombre }}
+        </div>
+
+        <div class="mb-3 text-center">
+          <label for="id_empresa" class="form-label d-block mx-auto" style="max-width: fit-content;">
+            Empresa:
+          </label>
+          {{ form.empresa }}
+        </div>
+
+        <div class="mb-3 text-center">
+          <label for="id_año_lanzamiento" class="form-label d-block mx-auto" style="max-width: fit-content;">
+            Año de lanzamiento:
+          </label>
+          {{ form.año_lanzamiento }}
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Guardar consola</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

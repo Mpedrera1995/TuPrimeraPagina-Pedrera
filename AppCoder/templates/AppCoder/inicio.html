@@ -1,0 +1,53 @@
+{% extends 'AppCoder/base.html' %}
+
+{% block title %}Inicio - Reseñas de Videojuegos{% endblock %}
+
+{% block content %}
+<section class="container text-center py-5">
+  <h1 class="mb-4">¡Bienvenido a fanáticos del gaming!</h1>
+
+  <!-- Formulario de búsqueda -->
+<form method="post" class="mb-5">
+  {% csrf_token %}
+  <div class="w-50 mx-auto">
+    <label for="id_videojuego" class="form-label fw-bold mb-2">Elige el juego que quieres investigar:</label>
+    <div class="input-group">
+      {{ formulario.videojuego }}
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+  </div>
+</form>
+
+  <!-- Resultados -->
+  {% if resultados %}
+    <h4 class="mt-4">Resultados encontrados:</h4>
+    <ul class="list-group w-75 mx-auto text-start">
+      {% for reseña in resultados %}
+        <li class="list-group-item">
+          <strong>{{ reseña.videojuego }}</strong><br>
+          {{ reseña.contenido }}<br>
+          <small>por {{ reseña.autor }}</small>
+        </li>
+      {% endfor %}
+    </ul>
+  {% elif resultados is not none %}
+    <p class="text-muted">No se encontraron reseñas para ese videojuego.</p>
+  {% endif %}
+
+  <hr class="my-5">
+
+  <!-- Acciones -->
+  <p class="lead mb-4">Elegí una opción disponible:</p>
+  <ul class="list-group w-50 mx-auto">
+    <li class="list-group-item">
+      <a href="{% url 'reseñas:crear_reseña' %}" class="text-decoration-none">📝 Crear reseña</a>
+    </li>
+    <li class="list-group-item">
+      <a href="{% url 'reseñas:agregar_truco' %}" class="text-decoration-none">🎮 Agregar truco</a>
+    </li>
+    <li class="list-group-item">
+      <a href="{% url 'reseñas:agregar_consola' %}" class="text-decoration-none">🕹️ Agregar consola de videojuegos</a>
+    </li>
+  </ul>
+</section>
+{% endblock %}

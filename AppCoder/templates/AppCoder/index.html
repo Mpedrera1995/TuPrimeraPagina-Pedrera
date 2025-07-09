@@ -1,0 +1,28 @@
+{% extends 'AppCoder/base.html' %}
+
+{% block title %}Inicio - Landing Page{% endblock %}
+
+{% block content %}
+<!-- Aquí va el contenido específico de la página de inicio -->
+<header class="masthead">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <h1 class="mb-5">¡Bienvenido a la mejor página de reseñas de videojuegos!</h1>
+                    <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" />
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}

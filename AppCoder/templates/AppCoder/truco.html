@@ -1,0 +1,28 @@
+{% extends 'AppCoder/base.html' %}
+
+{% block content %}
+  <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="container" style="max-width: 500px;">
+      <h2 class="mb-4 text-center">Agregar un truco</h2>
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3 text-center">
+          <label for="id_videojuego" class="form-label d-block mx-auto" style="max-width: fit-content;">
+            Nombre del videojuego:
+          </label>
+          {{ form.videojuego }}
+        </div>
+
+        <div class="mb-3 text-center">
+          <label for="id_descripcion" class="form-label d-block mx-auto" style="max-width: fit-content;">
+            Descripción del truco:
+          </label>
+          {{ form.descripcion }}
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Guardar truco</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
